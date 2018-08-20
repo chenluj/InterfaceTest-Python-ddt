@@ -1,11 +1,12 @@
 import os,sys
 import datetime
 
-# 添加环境变量
-BASE_PATH = os.path.dirname(
-	os.path.dirname(os.path.abspath(__file__))
-)
-sys.path.insert(0,BASE_PATH)
+'''
+    配置项目环境变量,用于各个模块之间的调用,系统可用找到对应的模块位置
+'''
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 from lib import tools
 
